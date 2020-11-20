@@ -1,10 +1,1285 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>你好，GitHub</title>
-  </head>
-  <body>
-    <h1>覺得厲害</h1>
-  </body>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>每月統計數據</title>
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="images/banner_s.jpg">
+</head>
+
+<body onload="Start();MyToday()">
+
+<div>
+
+  <div class="Mon" id="Mon"><h2>出入境統計數據<br>
+DADOS ESTATÍSTICOS MIGRATÓRIOS<br></h2></div>
+
+<div>
+  <select type="number" id="getCYear" class="cal"><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020 selected>2020</option></select>
+  <select type="number" id="getCMonth" class="cal">
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+      <option value=9>9</option>
+      <option value=10   selected>10</option>
+      <option value=11>11</option>
+      <option value=12>12</option>
+  </select>
+</div>
+
+<div class="choose">
+<button class="tablink" onclick="openPage('Main', this, '#D0505D')" id="defaultOpen">各出入境事務站出入境人次累計表<!-- Movimentos Somatíorio de Postos de Migração Entrada / Saída --></button>
+<button class="tablink" onclick="openPage('Home', this, 'SteelBlue')">澳門各出入境事務站旅客出入境統計數據<!--Dados da estatística de movimento de pessoas pelos diversos do Migração da RAEM--></button>
+<button class="tablink" onclick="openPage('Contact', this, '#E1929A')">分處<!--Subdivisão--></button>
+<button class="tablink" onclick="openPage('News', this, '#CC6600')">各出入境事務站<!--Postos de Migração--></button>
+<button class="tablink" onclick="openPage('About', this, '#6194A7')">主要活動概要<!--Resumo das principais activiaes desenvolvidas--></button>
+</div>
+
+</div>
+
+<div>
+<div id="Main" class="tabcontent">
+  <div style="text-align:left;"><p>Movimentos Somatíorio de Postos de Migração Entrada / Saída</p></div>
+  <!-- Load Font Awesome Icon Library -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<!-- Buttons to choose list or grid view -->
+
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+
+<hr>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.各出入境事務站按旅客種類人次累計表</h2>
+    <p>1.Movimentos de pessoas pelos diversos posto de migracao</p>
+    <button class="openlink" onclick="check('各出入境事務站按旅客種類人次累計表.pdf')">R-AL-ML</button>
+    </div>
+
+</div>
+
+</div>
+
+
+
+<div id="Home" class="tabcontent">
+  <div style="text-align: left;"><p>Dados da estatística de movimento de pessoas pelos diversos do Migração da RAEM</p></div>
+  <!-- Load Font Awesome Icon Library -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h3>第一部份 – 澳門特別行政區各出入境事務站旅客出入境統計數據</h3>
+<h3>1ª.Parte-Dados estatísticos de movimento de pessoas pelos diversos postos de migracão da RAEM</h3>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.各出入境站之出入境人數統計表</h2>
+    <p>1.Movimentos de pessoas pelos diversos posto de migracão</p>
+    <button class="openlink"  onclick="check('R-AL-SU.pdf')">R-AL-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.各出入境站平均每日之出入境人數統計表</h2>
+    <p>2.Média movimentos diários nos posto de migracão</p>
+    <button class="openlink" onclick="check('R-AL-SA.pdf')">R-AL-SA</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.各出入境站之入境旅客以國籍及性別作統計之數據表</h2>
+    <p>3.Total de visitantes entrados, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-AL-NE.pdf')">R-AL-NE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.各出入境站之出境旅客以國籍及性別作統計之數據表</h2>
+    <p>4.Total de visitantes saídos, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-AL-NS.pdf')">R-AL-NS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.各出入境站之入境中國旅客人數統計表</h2>
+    <p>5.Visitantes entrados de Chinese</p>
+    <button class="openlink" onclick="check('R-AL-CE.pdf')">R-AL-CE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.各出入境站之出境中國旅客人數統計表</h2>
+    <p>6.Visitantes saídos de Chinese</p>
+    <button class="openlink" onclick="check('R-AL-CS.pdf')">R-AL-CS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.各出入境站入境之內地居民個人遊以日期及性別作統計之數據表</h2>
+    <p>7.Visitantes da R.P.C. C/Visto (F) de Turismo Individual, entrados por dia e sexo</p>
+    <button class="openlink" onclick="check('R-AL-GE.pdf')">R-AL-GE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.各出入境站出境之內地居民個人遊以日期及性別作統計之數據表</h2>
+    <p>8.Visitantes da R.P.C. C/Visto (F) de Turismo Individual, saídos por dia e sexo</p>
+    <button class="openlink" onclick="check('R-AL-GS.pdf')">R-AL-GS</button>
+</div>
+</div>
+
+</div>
+
+<div id="News" class="tabcontent">
+  <div style="text-align: left;"><p>Postos de Migração</p></div>
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView_b()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView_b()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<button class="tablink_s" onclick="openPage('PE', this, '#555')">外港碼頭出入境事務站<br>POSTO DE MIGRAÇÃO DO TERMINAL DO PORTO EXTERIOR</button>
+<button class="tablink_s" onclick="openPage('PI', this, '#555')">內港碼頭出入境事務站<br>POSTO DE MIGRAÇÃO TERMINAL DO PORTO INTERIOR</button>
+<button class="tablink_s" onclick="openPage('PC', this, '#555')">關閘出入境事務站<br>POSTO DE MIGRAÇÃO DAS PORTAS DO CERCO</button>
+<button class="tablink_s" onclick="openPage('PA', this, '#555')">機場出入境事務站<br>POSTO DE MIGRAÇÃO DO AEROPORTO</button>
+<button class="tablink_s" onclick="openPage('PMH', this, '#555')">橫琴口岸澳門口岸區<br>ZONA DO POSTO FRONTEIRIÇO DA PARTE DE MACAU DO POSTO FRONTEIRIÇO HENGQIN</button>
+<button class="tablink_s" onclick="openPage('PT', this, '#555')">珠澳跨境工業區出入境事務站<br>POSTO DE MIGRAÇÃO DO PARQUE INDUSTRIAL TRANSFRONTEIRICO ZHUHAI-MACAU</button>
+<button class="tablink_s" onclick="openPage('TT', this, '#555')">氹仔碼頭出入境事務站<br>POSTO DE MIGRAÇÃO DO TERMINAL DA TAIPA</button>
+<button class="tablink_s" onclick="openPage('HZM', this, '#555')">港珠澳大橋出入境事務站<br>POSTO DE MIGRAÇÃO DA PONTE HONG KONG ZHUHAI MACAU</button>
+</div>
+
+
+<div id="PE" class="tabcontent">
+    <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>外港碼頭出入境事務站</h2>
+<h2>POSTO DE MIGRAÇÃO DO TERMINAL DO PORTO EXTERIOR</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos</p>
+    <button class="openlink" onclick="check('R-PE-SU.pdf')">R-PE-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.經水路之入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados, via marítima</p>
+    <button class="openlink" onclick="check('R-PE-DE-M.pdf')">R-PE-DE-M</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.經空路之入境人數以日期及性別作統計之數據表</h2>
+    <p>3.Movimento diário, por sexo dos passageiros entrados, via aérea</p>
+    <button class="openlink" onclick="check('R-PE-DE-A.pdf')">R-PE-DE-A</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>4.經水路及空路之入境旅客以國籍及性別作統計之數據表</h2>
+    <p>4.Visitantes entrados, por nacionalidade e sexo, via marítima/aérea</p>
+    <button class="openlink" onclick="check('R-PE-NE.pdf')">R-PE-NE</button>
+</div>
+</div>
+
+<div class="row">
+<div class="column" style="background-color:#aaa;">
+    <h2>5.經水路及空路之入境旅客以原居地作統計之數據表</h2>
+    <p>5.Visitantes entrados, por local de residência, via marítima/aérea</p>
+    <button class="openlink" onclick="check('R-PE-HE.pdf')">R-PE-HE</button>
+</div>
+
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>6.入境人數以年齡組別作統計之數據表</h2>
+    <p>6.Relação numérica dos visitantes entrados, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-PE-AE.pdf')">R-PE-AE</button>
+</div>
+</div>
+
+<div class="row">
+<div class="column" style="background-color:#aaa;">
+    <h2>7.經水路之出境人數以日期及性別作統計之數據表</h2>
+    <p>7.Movimento diário, por sexo dos passageiros saídos, via marítima</p>
+    <button class="openlink" onclick="check('R-PE-DS-M.pdf')">R-PE-DS-M</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>8.經空路之出境人數以日期及性別作統計之數據表</h2>
+    <p>8.Movimento diário, por sexo dos passageiros saídos, via aérea</p>
+    <button class="openlink" onclick="check('R-PE-DS-A.pdf')">R-PE-DS-A</button>
+</div>
+</div>
+
+<div class="row">
+<div class="column" style="background-color:#aaa;">
+    <h2>9.經水路及空路之出境旅客以國籍及性別作統計之數據表</h2>
+    <p>9.Visitantes saídos, por nacionalidade e sexo, via marítima/aérea</p>
+    <button class="openlink" onclick="check('R-PE-NS.pdf')">R-PE-NS</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>10.經水路及空路之出境旅客以原居地作統計之數據表</h2>
+    <p>10.Visitantes saídos, por local de residência, via marítima/aérea</p>
+    <button class="openlink" onclick="check('R-PE-HS.pdf')">R-PE-HS</button>
+</div>
+</div>
+<div class="row">
+<div class="column" style="background-color:#aaa;">
+    <h2>11.出境人數以年齡組別作統計之數據表</h2>
+    <p>11.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-PE-AS.pdf')">R-PE-AS</button>
+</div>
+</div>
+
+
+</div>
+
+<div id="PI" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>內港碼頭出入境事務站</h1>
+<h2>POSTO DE MIGRAÇÃO TERMINAL DO PORTO INTERIOR</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos</p>
+    <button class="openlink" onclick="check('R-PI-SU.pdf')">R-PI-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados</p>
+    <button class="openlink" onclick="check('R-PI-DE.pdf')">R-PI-DE</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.入境旅客以國籍及性別作統計之數據表</h2>
+    <p>3.Visitantes entrados, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-PI-NE.pdf')">R-PI-NE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.入境旅客以原居地作統計之數據表</h2>
+    <p>4.Visitantes entrados, por local de residência</p>
+    <button class="openlink" onclick="check('R-PI-HE.pdf')">R-PI-HE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.入境人數以年齡組別作統計之數據表</h2>
+    <p>5.Relação numérica dos visitantes entrados, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-PI-AE.pdf')">R-PI-AE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.出境人數以日期及性別作統計之數據表</h2>
+    <p>6.Movimento diário, por sexo dos passageiros saídos</p>
+    <button class="openlink" onclick="check('R-PI-DS.pdf')">R-PI-DS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.出境旅客以國籍及性別作統計之數據表</h2>
+    <p>7.Visitantes saídos, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-PI-NS.pdf')">R-PI-NS</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.出境旅客以原居地作統計之數據表</h2>
+    <p>8.Visitantes saídos, por local de residência</p>
+    <button class="openlink" onclick="check('R-PI-HS.pdf')">R-PI-HS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.出境人數以年齡組別作統計之數據表</h2>
+    <p>9.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-PI-AS.pdf')">R-PI-AS</button>
+</div>
+</div>
+
+</div>
+
+<div id="PC" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>關閘出入境事務站</h1>
+<h2>POSTO DE MIGRAÇÃO DAS PORTAS DO CERCO</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-PC-SU.pdf')">R-PC-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.步行入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados, via terrestre</p>
+    <button class="openlink" onclick="check('R-PC-DE-T.pdf')">R-PC-DE-T</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.乘車入境人數以日期及性別作統計之數據表</h2>
+    <p>3.Movimento diário, por sexo dos passageiros entrados, via viatura</p>
+    <button class="openlink" onclick="check('R-PC-DE-V.pdf')">R-PC-DE-V</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.步行及乘車之入境旅客以國籍及性別作統計之數據表</h2>
+    <p>4.Visitantes entrados, por nacionalidade e sexo, via terrestre e viatura</p>
+    <button class="openlink" onclick="check('R-PC-NE.pdf')">R-PC-NE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.步行及乘車之入境旅客以原居地作統計之數據表</h2>
+    <p>5.Visitantes entrados, por local de residência, via terrestre e viatura</p>
+    <button class="openlink" onclick="check('R-PC-HE.pdf')">R-PC-HE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.入境人數以年齡組別作統計之數據表</h2>
+    <p>6.Relação numérica dos visitantes entrados, divididos p/grupos etários.</p>
+    <button class="openlink" onclick="check('R-PC-AE.pdf')">R-PC-AE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.步行出境人數以日期及性別作統計之數據表</h2>
+    <p>7.Movimento diário, por sexo dos passageiros saídos, via terrestre</p>
+    <button class="openlink" onclick="check('R-PC-DS-T.pdf')">R-PC-DS-T</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.乘車出境人數以日期及性別作統計之數據表</h2>
+    <p>8.Movimento diário, por sexo dos passageiros saídos, via viatura</p>
+    <button class="openlink" onclick="check('R-PC-DS-V.pdf')">R-PC-DS-V</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.步行及乘車之出境旅客以國籍及性別作統計之數據表</h2>
+    <p>9.Visitantes saídos, por nacionalidade e sexo, via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-PC-NS.pdf')">R-PC-NS</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>10.步行及乘車之出境旅客以原居地作統計之數據表</h2>
+    <p>10.Visitantes saídos, por local de residência, via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-PC-HS.pdf')">R-PC-HS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>11.出境人數以年齡組別作統計之數據表</h2>
+    <p>11.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-PC-AS.pdf')">R-PC-AS</button>
+</div>
+</div>
+
+
+</div>
+
+<div id="PA" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>機場出入境事務站</h1>
+<h2>POSTO DE MIGRAÇÃO DO AEROPORTO</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos</p>
+    <button class="openlink" onclick="check('R-AI-SU.pdf')">R-AI-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados</p>
+    <button class="openlink" onclick="check('R-AI-DE.pdf')">R-AI-DE</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.入境旅客以國籍及性別作統計之數據表</h2>
+    <p>3.Visitantes entrados, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-AI-NE.pdf')">R-AI-NE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.入境旅客以原居地作統計之數據表</h2>
+    <p>4.Visitantes entrados, por local de residência</p>
+    <button class="openlink" onclick="check('R-AI-HE.pdf')">R-AI-HE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.入境人數以年齡組別作統計之數據表</h2>
+    <p>5.Relação numérica dos visitantes entrados, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-AI-AE.pdf')">R-AI-AE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.出境人數以日期及性別作統計之數據表</h2>
+    <p>6.Movimento diário, por sexo dos passageiros saídos</p>
+    <button class="openlink" onclick="check('R-AI-DS.pdf')">R-AI-DS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.出境旅客以國籍及性別作統計之數據表</h2>
+    <p>7.Visitantes saídos, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-AI-NS.pdf')">R-AI-NS</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.出境旅客以原居地作統計之數據表</h2>
+    <p>8.Visitantes saídos, por local de residência</p>
+    <button class="openlink" onclick="check('R-AI-HS.pdf')">R-AI-HS</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.出境人數以年齡組別作統計之數據表</h2>
+    <p>9.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-AI-AS.pdf')">R-AI-AS</button>
+</div>
+</div>
+</div>
+
+<div id="PMH" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>橫琴口岸澳門口岸區</h1>
+<h2>ZONA DO POSTO FRONTEIRIÇO DA PARTE DE MACAU DO POSTO FRONTEIRIÇO HENGQIN</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-CT-SU.pdf')">R-CT-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.步行入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados, via terrestre</p>
+    <button class="openlink" onclick="check('R-CT-DE-T.pdf')">R-CT-DE-T</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.乘車入境人數以日期及性別作統計之數據表</h2>
+    <p>3.Movimento diário, por sexo dos passageiros entrados, via viatura</p>
+    <button class="openlink" onclick="check('R-CT-DE-V.pdf')">R-CT-DE-V</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.步行及乘車之入境旅客以國籍及性別作統計之數據表</h2>
+    <p>4.Visitantes entrados, por nacionalidade e sexo, via terrestre e viatura</p>
+    <button class="openlink" onclick="check('R-CT-NE.pdf')">R-CT-NE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.步行及乘車之入境旅客以原居地作統計之數據表</h2>
+    <p>5.Visitantes entrados, por local de residência, via terrestre e viatura</p>
+    <button class="openlink" onclick="check('R-CT-HE.pdf')">R-CT-HE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.入境人數以年齡組別作統計之數據表</h2>
+    <p>6.Relação numérica dos visitantes entrados, divididos p/grupos etários.</p>
+    <button class="openlink" onclick="check('R-CT-AE.pdf')">R-CT-AE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.步行出境人數以日期及性別作統計之數據表</h2>
+    <p>7.Movimento diário, por sexo dos passageiros saídos, via terrestre</p>
+    <button class="openlink" onclick="check('R-CT-DS-T.pdf')">R-CT-DS-T</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.乘車出境人數以日期及性別作統計之數據表</h2>
+    <p>8.Movimento diário, por sexo dos passageiros saídos, via viatura</p>
+    <button class="openlink" onclick="check('R-CT-DS-V.pdf')">R-CT-DS-V</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.步行及乘車之出境旅客以國籍及性別作統計之數據表</h2>
+    <p>9.Visitantes saídos, por nacionalidade e sexo, via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-CT-NS.pdf')">R-CT-NS</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>10.步行及乘車之出境旅客以原居地作統計之數據表</h2>
+  <p>10.Visitantes saídos, por local de residência, via terrestre e via viatura</p>
+  <button class="openlink" onclick="check('R-CT-HS.pdf')">R-CT-HS</button>
+</div>
+
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>11.出境人數以年齡組別作統計之數據表</h2>
+    <p>11.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-CT-AS.pdf')">R-CT-AS</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="PT" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>珠澳跨境工業區出入境事務站</h1>
+<h2>POSTO DE MIGRAÇÃO DO PARQUE INDUSTRIAL TRANSFRONTEIRICO ZHUHAI-MACAU</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-PT-SU.pdf')">R-PT-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.步行入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados, via terrestre</p>
+    <button class="openlink" onclick="check('R-PT-DE-T.pdf')">R-PT-DE-T</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.乘車入境人數以日期及性別作統計之數據表</h2>
+    <p>3.Movimento diário, por sexo dos passageiros entrados, via viatura</p>
+    <button class="openlink" onclick="check('R-PT-DE-V.pdf')">R-PT-DE-V</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.步行及乘車之入境旅客以國籍及性別作統計之數據表</h2>
+    <p>4.Visitantes entrados, por nacionalidade e sexo, via terrestre e viatura</p>
+    <button class="openlink" onclick="check('R-PT-NE.pdf')">R-PT-NE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.步行及乘車之入境旅客以原居地作統計之數據表</h2>
+    <p>5.Visitantes entrados, por local de residência, via terrestre e viatura</p>
+    <button class="openlink" onclick="check('R-PT-HE.pdf')">R-PT-HE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.入境人數以年齡組別作統計之數據表</h2>
+    <p>6.Relação numérica dos visitantes entrados, divididos p/grupos etários.</p>
+    <button class="openlink" onclick="check('R-PT-AE.pdf')">R-PT-AE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.步行出境人數以日期及性別作統計之數據表</h2>
+    <p>7.Movimento diário, por sexo dos passageiros saídos, via terrestre</p>
+    <button class="openlink" onclick="check('R-PT-DS-T.pdf')">R-PT-DS-T</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.乘車出境人數以日期及性別作統計之數據表</h2>
+    <p>8.Movimento diário, por sexo dos passageiros saídos, via viatura</p>
+    <button class="openlink" onclick="check('R-PT-DS-V.pdf')">R-PT-DS-V</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.步行及乘車之出境旅客以國籍及性別作統計之數據表</h2>
+    <p>9.Visitantes saídos, por nacionalidade e sexo, via terrestre e via viatura</p>
+    <button class="openlink" onclick="check('R-PT-NS.pdf')">R-PT-NS</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>10.步行及乘車之出境旅客以原居地作統計之數據表</h2>
+  <p>10.Visitantes saídos, por local de residência, via terrestre e via viatura</p>
+  <button class="openlink" onclick="check('R-PT-HS.pdf')">R-PT-HS</button>
+</div>
+
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>11.出境人數以年齡組別作統計之數據表</h2>
+    <p>11.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-PT-AS.pdf')">R-PT-AS</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="TT" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>氹仔碼頭出入境事務站</h1>
+<h2>POSTO DE MIGRAÇÃO DO TERMINAL DA TAIPA</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表</h2>
+    <p>1.Total de passageiros entrados/saídos</p>
+    <button class="openlink" onclick="check('R-TT-SU.pdf')">R-TT-SU</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.入境人數以日期及性別作統計之數據表</h2>
+    <p>2.Movimento diário, por sexo dos passageiros entrados</p>
+    <button class="openlink" onclick="check('R-TT-DE.pdf')">R-TT-DE</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.入境旅客以國籍及性別作統計之數據表</h2>
+    <p>3.Visitantes entrados, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-TT-NE.pdf')">R-TT-NE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.入境旅客以原居地作統計之數據表</h2>
+    <p>4.Visitantes entrados, por local de residência</p>
+    <button class="openlink" onclick="check('R-TT-HE.pdf')">R-TT-HE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.入境人數以年齡組別作統計之數據表</h2>
+    <p>5.Relação numérica dos visitantes entrados, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-TT-AE.pdf')">R-TT-AE</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.出境人數以日期及性別作統計之數據表</h2>
+    <p>6.Movimento diário, por sexo dos passageiros saídos</p>
+    <button class="openlink" onclick="check('R-TT-DS.pdf')">R-TT-DS</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.出境旅客以國籍及性別作統計之數據表</h2>
+    <p>7.Visitantes saídos, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-TT-NS.pdf')">R-TT-NS</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.出境旅客以原居地作統計之數據表</h2>
+    <p>8.Visitantes saídos, por local de residência</p>
+    <button class="openlink" onclick="check('R-TT-HS.pdf')">R-TT-HS</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.出境人數以年齡組別作統計之數據表</h2>
+    <p>9.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+    <button class="openlink" onclick="check('R-TT-AS.pdf')">R-TT-AS</button>
+</div>
+</div>
+
+</div>
+
+<div id="HZM" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h2>港珠澳大橋出入境事務站</h1>
+<h2>POSTO DE MIGRAÇÃO DA PONTE HONG KONG ZHUHAI MACAU</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.出入境人數統計表 (珠澳及港澳通道)</h2>
+    <p>1.Total de passageiros entrados/saídos</p>
+    <button class="openlink" onclick="check('R-PHZM-SU-T.pdf')">R-PHZM-SU-T</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.出入境人數統計表 (車行通道)</h2>
+    <p>2.Total de passageiros entrados/saídos</p>
+    <button class="openlink" onclick="check('R-PHZM-SU-V.pdf')">R-PHZM-SU-V</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.入境人數以日期及性別作統計之數據表 (珠澳通道)</h2>
+    <p>3.Movimento diário, por sexo dos passageiros entrados</p>
+    <button class="openlink" onclick="check('R-PHZM-DE-ZM-T.pdf')">R-PHZM-DE-ZM-T</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.入境人數以日期及性別作統計之數據表 (港澳通道)</h2>
+    <p>4.Movimento diário, por sexo dos passageiros entrados</p>
+    <button class="openlink" onclick="check('R-PHZM-DE-HM-T.pdf')">R-PHZM-DE-HM-T</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.入境人數以日期及性別作統計之數據表 (車行通道)</h2>
+    <p>5.Movimento diário, por sexo dos passageiros entrados</p>
+    <button class="openlink" onclick="check('R-PHZM-DE-V.pdf')">R-PHZM-DE-V</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.入境旅客以國籍及性別作統計之數據表 (珠澳及港澳通道)</h2>
+    <p>6.Visitantes entrados, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-PHZM-NE-T.pdf')">R-PHZM-NE-T</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.入境旅客以國籍及性別作統計之數據表 (車行通道)</h2>
+    <p>7.Visitantes entrados, por nacionalidade e sexo</p>
+    <button class="openlink" onclick="check('R-PHZM-NE-V.pdf')">R-PHZM-NE-V</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.入境旅客以原居地作統計之數據表 (珠澳及港澳通道)</h2>
+    <p>8.Visitantes entrados, por local de residência</p>
+    <button class="openlink" onclick="check('R-PHZM-HE-T.pdf')">R-PHZM-HE-T</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.入境旅客以原居地作統計之數據表 (車行通道)</h2>
+    <p>9.Visitantes entrados, por local de residência</p>
+    <button class="openlink" onclick="check('R-PHZM-HE-V.pdf')">R-PHZM-HE-V</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>10.入境人數以年齡組別作統計之數據表</h2>
+  <p>10.Relação numérica dos visitantes entrados, divididos p/grupos etários</p>
+  <button class="openlink" onclick="check('R-PHZM-AE.pdf')">R-PHZM-AE</button>
+</div>
+
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>11.出境人數以日期及性別作統計之數據表 (珠澳通道)</h2>
+    <p>11.Movimento diário, por sexo dos passageiros saídos</p>
+    <button class="openlink" onclick="check('R-PHZM-DS-ZM-T.pdf')">R-PHZM-DS-ZM-T</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>12.出境人數以日期及性別作統計之數據表 (港澳通道)</h2>
+  <p>12.Movimento diário, por sexo dos passageiros saídos</p>
+  <button class="openlink" onclick="check('R-PHZM-DS-HM-T.pdf')">R-PHZM-DS-HM-T</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>13.出境人數以日期及性別作統計之數據表 (車行通道)</h2>
+    <p>13.Movimento diário, por sexo dos passageiros saídos</p>
+    <button class="openlink" onclick="check('R-PHZM-DS-V.pdf')">R-PHZM-DS-V</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>14.出境旅客以國籍及性別作統計之數據表 (珠澳及港澳通道)</h2>
+  <p>14.Visitantes saídos, por nacionalidade e sexo</p>
+  <button class="openlink" onclick="check('R-PHZM-NS-T.pdf')">R-PHZM-NS-T</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>15.出境旅客以國籍及性別作統計之數據表 (車行通道)</h2>
+    <p>15.Visitantes saídos, por nacionalidade e sexo</p>
+  <button class="openlink" onclick="check('R-PHZM-NS-V.pdf')">R-PHZM-NS-V</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>16.出境旅客以原居地作統計之數據表 (珠澳及港澳通道)</h2>
+  <p>16.Visitantes saídos, por local de residência</p>
+  <button class="openlink" onclick="check('R-PHZM-HS-T.pdf')">R-PHZM-HS-T</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>17.出境旅客以原居地作統計之數據表 (車行通道)</h2>
+    <p>17.Visitantes saídos, por local de residência</p>
+    <button class="openlink" onclick="check('R-PHZM-HS-V.pdf')">R-PHZM-HS-V</button>
+</div>
+<div class="column" style="background-color:#5b7d86;">
+  <h2>18.出境人數以年齡組別作統計之數據表</h2>
+  <p>18.Relação numérica dos visitantes saídos, divididos p/grupos etários</p>
+  <button class="openlink" onclick="check('R-PHZM-AS.pdf')">R-PHZM-AS</button>
+</div>
+</div>
+
+</div>
+
+<div id="Contact" class="tabcontent">
+  <div style="text-align: left;"><p>Subdivisão</p></div>
+  <!-- Buttons to choose list or grid view -->
+
+  <button onclick="listView_b()"><i class="fa fa-bars"></i> List</button>
+  <button onclick="gridView_b()"><i class="fa fa-th-large"></i> Grid</button>
+  <hr>
+
+<button class="tablink_s" onclick="openPage('SR', this, '#555')">居留分處<br>SUBDIVISÃO DE RESIDÊNCIA</button>
+<button class="tablink_s" onclick="openPage('SP', this, '#555')">逗留分處<br>SUBDIVISÃO DE ESTRANGEIROS</button>
+<button class="tablink_s" onclick="openPage('TNR', this, '#555')">外地僱員分處<br>SUBDIVISÃO DE TRABALHADORES NÃO-RESIDENTES</button>
+
+</div>
+
+<div id="SR" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h3>第二部份 -- 居留分處統計數據</h3>
+<h3>2ª. Parte – Dados da estatística do Subdivisão de Residência</h3>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.進入本澳及作出”居留許可”申請之中國公民按其“中國前往港澳通行證＂之簽發地點作分類之每月統計表</h2>
+    <p>1.Mapa demonstrativo mensal, por local de emissão de “S.C.S.”,dos cidadãos chineses que entraram na R.A.E.M. e requereram A.R.</p>
+    <button class="openlink" onclick="check('(01R) Art 19 進入本澳及辦證按簽發地點每月統計表.pdf')">01/R</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.所有持“前往港澳通行證＂之人士，獲保安司司長/治安警察局局長作出批示之統計表</h2>
+    <p>2.Mapa demonstrativo das decisões do secretário para a segurança / director do c.p.s.p. para titulares de "S.C.S."</p>
+    <button class="openlink" onclick="check('表2.pdf')">02/R</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.持“中國前往港澳通行證＂之中國公民獲簽發“居留證明書＂之統計表</h2>
+    <p>3.Mapa demonstrativo dos "certificados de residência" emitidos a cidadãos chineses titulares de " S.C.S."</p>
+    <button class="openlink" onclick="check('(03R) Art 19 簽發居留證統計表.pdf')">03/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.持“中國前往港澳通行證＂獲發“居留證明書＂之中國公民按年齡及性別作分類之每月統計表</h2>
+    <p>4.Mapa demonstrativo mensal por idade e sexo dos cidadãos chineses titulares de "S.C.S." aos quais foram emitidos</p>
+    <button class="openlink" onclick="check('(04R) Art 19 簽發居留證按年齡及性別每月統計表.pdf')">04/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.持載有“R＂代號之“中國前往港澳通行證＂獲發“居留證明書＂之中國公民按年齡及性別作分類之每月統計表</h2>
+    <p>5.Mapa demonstrativo mensal por idade e sexo dos cidadãos chineses titulares de "S.C.S." com indicativo (r) aos quais foram emitidos "certificados de residência".</p>
+    <button class="openlink" onclick="check('(05R) Art 19 持有 R 簽發居留證按年齡及性別每月統計表.pdf')">05/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.持“中國前往港澳通行證＂獲發“居留證明書＂之中國公民按年齡、性別及定居理由作分類之每月統計表</h2>
+    <p>6.Mapa demonstrativo mensal por idade, sexo e fundamento para a.r. dos cidadãos chineses titulares de "S.C.S." aos quais foram emitidos "certificados de residência".</p>
+    <button class="openlink" onclick="check('(06R) Art 19 簽發居留證按年齡性別及定居理由每月統計表.pdf')">06/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.所有“未成年子女＂之人士，獲保安司司長作出批示之統計表</h2>
+    <p>7.Mapa demonstrativo das decisões do secretário para a segurança para "filhos menores".</p>
+    <button class="openlink" onclick="check('表7.pdf')">07/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.按第5/2003 號行政法規第二十一條規定而簽發之”居留證明書”統計表(居留許可)</h2>
+    <p>8.Mapa demonstrativo dos “Certificados de Residência”emitidos nos termos do ART°21° do R.A N°5/2003 (A.R.)</p>
+    <button class="openlink" onclick="check('(08R) Art 21 簽發居留證統計表_首次.pdf')">08/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.按第5/2003 號行政法規第十四條規定而簽發之”居留證明書”統計表(居留許可續期)</h2>
+    <p>9.Mapa demonstrativo dos “Certificados de Residência”emitidos nos termos do ART°14° do R.A N°5/2003 (renovação de A.R.)</p>
+    <button class="openlink" onclick="check('(09R) Art 21 簽發居留證統計表_續期.pdf')">09/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>10.獲發”居留證明書”之”未成年子女”按年齡及性別作分類之每月統計表</h2>
+    <p>10.Mapa demonstrativo mensal por idade e sexo de “filhos menores”aos quais foram emitidos</p>
+    <button class="openlink" onclick="check('(10R) Art 21 簽發居留證按年齡及性別每月統計表.pdf')">10/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>11.所有”葡萄牙公民”之”居留許可”/”居留許可”續期申請，獲保安司司長 /居留及逗留事務廳廳長作出批示之統計表</h2>
+    <p>11.Mapa demonstrativo das decisões do secretário para a segurança / chefe do departamento para os assuntos de residência dospedidos de autorização/ renovação de residência dos cidadãos portugueses</p>
+    <button class="openlink" onclick="check('表11.pdf')">11/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>12.發給葡萄牙公民之”居留證明書”統計表</h2>
+    <p>12.Mapa demonstrativo de “Certificados de Residência”emitidos a cidadaõs portugueses</p>
+    <button class="openlink" onclick="check('(12R) Art 20 簽發居留證按定居理由統計表.pdf')">12/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>13.獲發”居留證明書”之葡萄牙公民按年齡及性別作分類之每月統計表</h2>
+    <p>13.Mapa demonstrativo mensal por idade e sexo de cidadãos portugueses aos quais foram emitidos “Certificados de Residência”</p>
+    <button class="openlink" onclick="check('(13R) Art 20 簽發居留證按年齡及性別每月統計表.pdf')">13/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>14.前居民事務警司處辦理而獲批給”居留許可”之葡萄牙公民統計表</h2>
+    <p>14.Mapa demonstrativo do total de cidadãos portugueses com autorização de residência, concedida através do Ex-COM° de residentes</p>
+    <button class="openlink" onclick="check('表14.pdf')">14/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>15.前居民事務警司處辦理而獲批給”居留許可”之葡萄牙公民,按年齡及性別作分類之統計表</h2>
+    <p>15.Mapa demonstrativo por idade e sexo, do total de cidadãos portugueses com autorização de residência, concedida através do Ex-COM° de residents</p>
+    <button class="openlink" onclick="check('表15.pdf')">15/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>16.前居民事務警司處所作之”居留許可”廢止個案統計表</h2>
+    <p>16.Mapa demonstrativo das revogações de A.R. efectuados no “Ex.-Comissariado de Residentes”</p>
+    <button class="openlink" onclick="check('表16.pdf')">16/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>17.持”中國前往港澳通行證”獲發”居留證明書”之中國公民(澳門居民的內地超齡子女)按年齡及性別作分類之每月統計表</h2>
+    <p>17.Mapa demonstrativo Mensal Por Idade e Sexo Dos Cidadãos Chineses Titulares de “S.C.S.”(Filhos Maiores de Residentes do Interior da R.P.C.)Aos Quais Foram Imitidos “Certificados de Residência”.</p>
+    <button class="openlink" onclick="check('(17R) Art 19 持有 M 簽發居留證按年齡及性別每月統計表.pdf')">17/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>18.持”中國前往港澳通行證”獲發”居留證明書”之中國公民(具有居留權)按年齡及性別作分類之每月統計表</h2>
+    <p>18.Mapa demonstrativo Mensal Por Idade e Sexo Dos Cidadãos Chineses Titulares de “S.C.S.”(Têm Direito de Residência)Aos Quais Foram Emitidos “Certificados de Residência”</p>
+    <button class="openlink" onclick="check('(18R) Art 19 持有 E 簽發居留證按年齡及性別每月統計表.pdf')">18/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>19.居留分處所簽發之”憑單”統計表 [按第4/2003 號法律及第5/2003 號行政法規批給居留許可]</h2>
+    <p>19.Mapa demonstrativo das "guias" emitidas pelo Subdivisão de Residência [A.R. concedida nos termos da lei Nº4/2003 e R.A. Nº5/2003]</p>
+    <button class="openlink" onclick="check('19R.pdf')">19/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>20.獲簽發“憑單”之人士,按定居理由及性別作分類之統計表[經居留分處辦理並按第4/2003 號法律及第5/2003 號行政法規批給"居留許可"]</h2>
+    <p>20.Mapa demonstrativo por fundamento para a A. R. e sexo de cidadãos aos quais foram emitido "Guias" [Autorização de residência concedida nos termos da lei N°4/2003 e R.A. N°5/2003 e processados através do Subdivisão de Residência]</p>
+    <button class="openlink" onclick="check('20R.pdf')">20/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>21.獲簽發“憑單”之人士按年齡及性別作分類之每月統計表 [經居留分處辦理並按第4/2003 號法律及第5/2003 號行政法規批給“居留許可”/“居留許可”續期]</h2>
+    <p>21.Mapa demonstrativo mensal por idades e sexo de cidadãos aos quais foram emitido "Guias" [Autorização/renovação de residência concedida nos termos da lei N°4/2003 e R.A. N°5/2003 e processados através do Subdivisão de Residência]</p>
+    <button class="openlink" onclick="check('21R.pdf')">21/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>22.經居留分處辦理,並按第4/2003 號法律及第5/2003 號行政法規獲批給非永久性”居留許可”之人士,按所持證件(國家/地區)作分類之統計表</h2>
+    <p>22.Mapa demonstrativo por documento(país/território) do total de cidadãos com A.R. não permanente concedida através do Subdivisão de Residência, nos termos da lei N°4/2003 e R.A. N°5/2003</p>
+    <button class="openlink" onclick="check('22R.pdf')">22/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>23.經居留分處辦理,並按第4/2003 號法律及第5/2003 號行政法規獲批給非永久性”居留許可”之人士,按年齡及性別作分類之統計表</h2>
+    <p>23.Mapa demonstrativo por idades e sexo do total de cidadãos com autorização de residência não permanente concedida através do Subdivisão de Residência, nos termos da lei N°4/2003 e R.A. N°5/2003</p>
+    <button class="openlink" onclick="check('23R.pdf')">23/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>24.居留分處所簽發之“憑單”統計表 [按第14/95/M 號法令及第3/2005 號行政法規批給居留許可]</h2>
+    <p>24.Mapa demonstrativo das "Guias" emitidas pelo Subdivisão de Residência [A.R. concedida nos termos do D.L.14/95/M e R.A.N°3/2005]</p>
+    <button class="openlink" onclick="check('24R.pdf')">24/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>25.獲簽發“憑單”之人士按年齡及性別作分類之每月統計表[經貿易投資促進局辦理並按第14/95/M 號法令及第3/2005 號行政法規批給"居留許可 "/"居留許可"續期]</h2>
+    <p>25.Mapa demonstrativo mensal por idades e sexo de cidadãos aos quais foram emitido "Guias" [Autorização/renovação de residência concedida nos termos do D.L. N°14/95/M ou R.A. N°3/2005 e processados através do IPIM]</p>
+    <button class="openlink" onclick="check('25R.pdf')">25/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>26.經貿易投資促進局辦理,並按第14/95/M 號法令及第3/2005 號行政法規批給非永久性”居留許可”之人士,按所持證件(國家/地區)作分類之統計表</h2>
+    <p>26.Mapa demonstrativo por documento (país/território) do total de cidadãos com Autorização de Residência não permanente concedida através do IPIM, nos termos do D.L. N°14/95/M ou R.A. N°3/2005</p>
+    <button class="openlink" onclick="check('26R.pdf')">26/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>27.經貿易投資促進局辦理,並按第14/95/M號法令及第3/2005 號行政法規獲批給非永久性”居留許可”之人士,按年齡及性別作分類之統計表</h2>
+    <p>27.Mapa demonstrativo por idades e sexo do total de cidadãos com Autorização de Residência não permanente concedida através do IPIM, nos termos do D.L. N°14/95/M ou R.A. N°3/2005</p>
+    <button class="openlink" onclick="check('27R.pdf')">27/R</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>28.所有獲身份證明局核實具有澳門永久性居民身份之所有經外國人事務警司處辦理，並按第 4/2003 號法律及第5/2003號行政法規獲批給"居留許可"之人士，按年齡及性別作分類之統計表</h2>
+    <p>28.Mapa demonstrativo por idades e sexo do total de cidadãos com autorização de residência concedida através do Com.º de Estrangeiro, nos termos da Lei N.º4/2003 e R.A. N.º5/2003, aos quais foi reconhecido pela DSIM o estatuto de residente permanente</p>
+    <button class="openlink" onclick="check('28R.pdf')">28/R</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>29.所有獲身份證明局核實具有澳門永久性居民身份之所有經貿易投資促進局辦理，並按第 14/95/M 號法令及第3/2005號行政法規獲批給"居留許可"之人士，按年齡及性別作分類之統計表</h2>
+    <p>29.Mapa demonstrativo por idades e sexo do total de cidadãos com autorização de residência concedida através do IPIMnos termos do D.L. N.º14/95/M e R.A. N.º3/2005, aos quais foi reconhecido pela DSIM o estatuto de residente permanente</p>
+    <button class="openlink" onclick="check('29R.pdf')">29/R</button>
+</div>
+</div>
+
+</div>
+
+<div id="SP" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h3>第三部份 – 逗留分處統計數據</h3>
+<h3>3ª. Parte -- Dados da estatística do Subdivisão de Estrangeiros</h3>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.因就讀高等院校而獲批給”逗留的特別許可”之外地學生統計表</h2>
+    <p>1.Mapa demonstrativo de estudantes não-residentes a quem foi concedida a autorização especial de permanência para frequência de cursos em estabelecimento de ensino superior</p>
+    <button class="openlink" onclick="check('01E.pdf')">01/E</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.獲批給”逗留的特別許可”之外地學生,按性別、年齡及就讀之高等學校作分類之每月統計表</h2>
+    <p>2.Mapa demonstrativo mensal por sexo, idade e estabelecimento de ensino superior dos estudantes não-residentes a quem foi concedida a autorização especial de permanência</p>
+    <button class="openlink" onclick="check('02E.pdf')">02/E</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.所有因在高等院校就讀而獲批給“逗留的特別許可”之外地學生統計表</h2>
+    <p>3.Mapa demonstrativo do total de estudantes não-residentes a quem foi concedida a autorização especial de permanência para frequência de cursos em estabelecimento de ensino superior</p>
+    <button class="openlink" onclick="check('03E.pdf')">03/E</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.所有因在高等院校就讀而獲批給“逗留的特別許可”之外地學生，按性別、年齡及就讀之高等學校作分類之統計表</h2>
+    <p>4.Mapa demonstrativo por sexo, idade e estabelecimento de ensino superior do total de estudantes não-residentes a quem foi concedida a autorização especial de permanência</p>
+    <button class="openlink" onclick="check('04E.pdf')">04/E</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.根據第 165/2010 號行政長官所批示之國家之國民獲簽發“入境簽證＂之人士,進入澳門特別行政區之按月統計表</h2>
+    <p>5.Mapa demonstrativo dos nacionais dos seguintes países a quem foram emitidos visto prévio de entrada na RAEM, nos termos do despacho do Chefe do Executivo n°165/2010, de 18 de Maio de 2010</p>
+    <button class="openlink" onclick="check('05E.pdf')">05/E</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.獲簽發”特別逗留證”人士之統計表</h2>
+    <p>6.Mapa demonstrativo dos indivíduos aos quais foram emitido título especial de permanência</p>
+    <button class="openlink" onclick="check('06E.pdf')">06/E</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.所有獲簽發”特別逗留證”人士之統計表</h2>
+    <p>7.Mapa demonstrativo do total de indivíduos aos quais foram emitido título especial de permanência</p>
+    <button class="openlink" onclick="check('07E.pdf')">07/E</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.所有獲簽發”特別逗留證”結餘人士,按性別及年齡作分類之每月統計表</h2>
+    <p>8.Mapa demonstrativo, por idade e sexo do total do agregado familiar de TNR autorizados a permanecer em Macau</p>
+    <button class="openlink" onclick="check('08E.pdf')">08/E</button>
+</div>
+</div>
+
+</div>
+
+<div id="TNR" class="tabcontent">
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<h3>第四部份 – 外地僱員分處統計數據</h3>
+<h3>4ª. Parte -- Dados estatísticos do Subdivisão de Trabalhadores Não-Residentes</h3>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>1.持“外地僱員身份認別證”人士之統計表</h2>
+    <p>1.Mapa demonstrativo dos portadores de T.I./TNR</p>
+    <button class="openlink" onclick="check('01TNR.pdf')">01TNR</button>
+</div>
+
+  <div class="column" style="background-color:#5b7d86;">
+    <h2>2.所有持“外地僱員身份認別證”之人士,按所持證件<國家/地區>作分類之統計表</h2>
+    <p>2.Mapa demonstrativo, por documento (país/território) do total de portadores de T.I./TNR</p>
+    <button class="openlink" onclick="check('02TNR.pdf')">02TNR</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>3.所有持“外地僱員身份認別證”之人士按行業、年齡及性別作分類之統計表</h2>
+    <p>3.Mapa demonstrativo, por actividade profissional, idade e sexo do total de portadores de T.I./TNR</p>
+    <button class="openlink" onclick="check('03TNR.pdf')">03TNR</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>4.外地僱員及自僱人士統計表-1/2</h2>
+    <p>4.Mapa Geral dos trabalhadores não residentes e dos que exercem actividade em proveito próprio</p>
+    <button class="openlink" onclick="check('04TNR.pdf')">04TNR</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>5.外地僱員及自僱人士統計表-2/2</h2>
+    <p>5.Mapa Geral dos trabalhadores não residentes e dos que exercem actividade em proveito próprio</p>
+    <button class="openlink" onclick="check('05TNR.pdf')">05TNR</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>6.獲批准在本澳逗留之外地僱員家屬,按所持證件<國家/地區>作分類之統計表</h2>
+    <p>6.Mapa demonstrativo, por documento (país/território) de agregados familiares de TNR autorizados a permanecer em Macau</p>
+    <button class="openlink" onclick="check('06TNR.pdf')">06TNR</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>7.獲批准在本澳逗留之外地僱員家屬,按性別及年齡作分類之統計表</h2>
+    <p>7.Mapa demonstrativo, por idade e sexo de agregados familiares de TNR autorizados a permanecer em Macau</p>
+    <button class="openlink" onclick="check('07TNR.pdf')">07TNR</button>
+</div>
+
+<div class="column" style="background-color:#5b7d86;">
+    <h2>8.所有獲批准在本澳逗留之外地僱員家屬之統計表</h2>
+    <p>8.Mapa demonstrativo do total de agregados familiares de TNR autorizados a permanecer em Macau</p>
+    <button class="openlink" onclick="check('08TNR.pdf')">08TNR</button>
+</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>9.所有獲批准在本澳逗留之外地僱員家屬,按性別及年齡作分類之統計表</h2>
+    <p>9.Mapa demonstrativo, por idade e sexo do total de agregados familiares de TNR autorizados a permanecer em Macau</p>
+    <button class="openlink" onclick="check('09TNR.pdf')">09TNR</button>
+</div>
+
+</div>
+</div>
+
+
+<div id="About" class="tabcontent">
+    <div style="text-align: left;"><p>Resumo das principais activiaes desenvolvidas</p></div>
+  <!-- Load Font Awesome Icon Library
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- Buttons to choose list or grid view -->
+<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+<hr>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+
+    <h2>1.主要活動概要</h2>
+    <p>1.Resumo das principais activiaes desenvolvidas</p>
+    <button class="openlink" onclick="check('RESUMO.pdf')">RESUMO</button>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+  <script src="scripts/app.js"></script>
+</body>
 </html>
