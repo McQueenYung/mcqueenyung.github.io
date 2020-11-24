@@ -33,3 +33,15 @@ body, html {
   height: auto;
   font-family: Arial;
 }
+
+p {
+  background-color: #777;
+  float: left;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: Arial;
+}
